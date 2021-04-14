@@ -11,9 +11,7 @@ class Venta{
 	var property fecha
 	var prendasVendidas = #{}
 	
-	method precioTotal(){
-		 prendasVendidas.map({prenda => tipoDePago.criterioDePago(prenda.precio())})
-	}	
+	method precioTotal() = prendasVendidas.sum({prenda => tipoDePago.criterioDePago(prenda.precio())})
 }
 
 class Tarjeta{
@@ -59,3 +57,4 @@ object efectivo{
  	method precioSegunEstado(precioTipo) = precioTipo / 2
  }
  
+
